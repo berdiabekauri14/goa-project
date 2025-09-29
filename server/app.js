@@ -17,5 +17,5 @@ app.use(express.json())
 app.use("/comments", commentsRouter)
 
 app.listen(process.env.PORT, () => {
-    console.log(`Server is running on port ${process.env}`)
+    console.log(`Server is running on port ${process.env.PORT}`)
 })
