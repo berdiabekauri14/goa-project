@@ -1,3 +1,5 @@
+const AppError = require("../utils/appError")
+
 const comments = [
     { id: 1, comment: "This acadamy is very good! great job!"},
     { id: 2, comment: "I want to learn too!" },
@@ -15,10 +17,7 @@ const getComment = (req, res) => {
     if (Comment) {
         res.json(Comment)
     } else {
-        res.status(404).json({
-            status: "fail",
-            message: "Comment not found"
-        })
+        return new AppError("Comment wasn't found", 404)
     }
 }
 
@@ -26,10 +25,7 @@ const createComment = (req, res) => {
     const { comment } = req.body;
 
     if (!comment) {
-        res.status(403).json({
-            status: "something missing",
-            message: "Comment is required"
-        })
+        return new AppError("Comment is required to be filled", 403);
     }
 
     const newComment = {
@@ -47,10 +43,7 @@ const deleteComment = (req, res) => {
     const Comment = comments.findIndex(el => el === id * 1)
 
     if (id === -1) {
-        res.status(404).json({
-            status: "fail",
-            message: "Comment not found"
-        })
+        return new AppError("Comment wasn't found", 404)
     }
 
     comments.splice(Comment, 1)
@@ -66,14 +59,11 @@ const updateComment = (req, res) => {
     const Comment = comments.find(el => el === id * 1)
 
     if (!Comment) {
-        res.status(404).json({
-            status: "fail",
-            message: "Comment not found"
-        })
+        return new AppError("Comment wasn't found", 404)
     }
 
     if (comment) Comment.comment = comment
-
+    
     res.json(comments)
 
 }
