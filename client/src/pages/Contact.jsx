@@ -24,9 +24,9 @@ export default function Contact() {
             <h1 className=" text-3xl"><b>Contact us</b></h1>
             <br />
             <form name="form">
-                <input type="email" name="email" className=" border-2 outline-0 p-2 m-2" placeholder="Enter your email" />
+                <input type="email" name="email" className=" border-2 outline-0 p-2 m-2 rounded" placeholder="Enter your email" />
                 <br />
-                <textarea name="message" className=" border-2 outline-0 p-2 m-2" placeholder="Enter your message"></textarea>
+                <textarea name="message" className=" border-2 outline-0 p-2 m-2 rounded" placeholder="Enter your message"></textarea>
                 <br />
                 <button onClick={handleFormSubmit} className=" border-2 rounded cursor-pointer">Submit</button>
             </form>

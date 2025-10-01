@@ -34,13 +34,13 @@ export default function Signup() {
                 <h1 className=" text-3xl"><b>Signup</b></h1>
                 <br />
                 <form action="./Home.jsx" name="form">
-                    <input type="text" name="name" className=" border-2 outline-0 p-2 m-2" placeholder="Enter your name" />
+                    <input type="text" name="name" className=" border-2 outline-0 p-2 m-2 rounded" placeholder="Enter your name" />
                     <br />
-                    <input type="email" name="email" className=" border-2 outline-0 p-2 m-2" placeholder="Enter your email" />
+                    <input type="email" name="email" className=" border-2 outline-0 p-2 m-2 rounded" placeholder="Enter your email" />
                     <br />
-                    <input type="password" name="password" className=" border-2 outline-0 p-2 m-2" placeholder="Create a password" />
+                    <input type="password" name="password" className=" border-2 outline-0 p-2 m-2 rounded" placeholder="Create a password" />
                     <br />
-                    <input type="password" name="comfPass" className=" border-2 outline-0 p-2 m-2" placeholder="Confirm your password" />
+                    <input type="password" name="comfPass" className=" border-2 outline-0 p-2 m-2 rounded" placeholder="Confirm your password" />
                     <br />
                     <button onClick={handleFormSubmit} className=" border-2 rounded cursor-pointer">Submit</button>
                 </form>
