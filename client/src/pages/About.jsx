@@ -11,6 +11,8 @@ export default function About() {
                 <img src={img} alt="img" className=" translate-x-190 m-4 rounded" width="500" />
             </div>
             <br />
+            <p className=" m-2">Facebook to our page: <a href="https://www.facebook.com/nika11keshelava?locale=ka_GE" className=" underline text-blue-400">https://www.facebook.com/nika11keshelava?locale=ka_GE</a></p>
+            <br />
             <p>GOA(Goal oriented academy) is the best academy in georgia to learn programming, In goa, you can learn how to create websites, programs, apps, games and more. There are more then 2 000 children in goa learning programming. You can also get a job being an programming teacher</p>
             <h2 className=" text-2xl"><b><i>Comments from this academy</i></b></h2>
             <Comments />

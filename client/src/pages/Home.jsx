@@ -3,16 +3,21 @@ import Nav from "../components/Nav";
 import About from "../pages/About"
 import Contact from "../pages/Contact"
 import Signup from "../pages/Signup"
+
 import video from "../assets/videos/video.mp4"
 import shadow from "../assets/imgs/black.jpg"
+import img from "../assets/imgs/goa logo.png"
+import Courses from "./Courses";
 
 export default function Home() {
     return (
         <div className=" text-center">
-            <header className=" p-15 bg-green-900 text-white">
-                <h1 className=" text-4xl"><b>GOA ● Goal oriented academy</b></h1>
+            <header className=" p-15 bg-green-900 text-white flex justify-center items-center">
+                <h1 className=" text-4xl m-5"><b><u>GOA ● Goal oriented academy</u></b></h1>
                 <br />
                 <Nav />
+                <br />
+                <img src={img} alt="img" width="100" className=" translate-x-12" />
             </header>
             <br />
             <main>
@@ -29,13 +34,14 @@ export default function Home() {
                 <br />
                 <Routes>
                     <Route path="/client/src/pages/About.jsx" element={<About />} />
+                    <Route path="/client/src/pages/Courses.jsx" element={<Courses />} />
                     <Route path="/client/src/pages/Contact.jsx" element={<Contact />} />
                     <Route path="/client/src/pages/Signup.jsx" element={<Signup />} />
                 </Routes>
             </main>
             <br />
             <footer className=" p-80 bg-green-900 text-white">
-                <p className=" -translate-y-50 text-9xl"><i>©2025 Berdia Bekauri</i></p>
+                <p className=" -translate-y-50 text-9xl"><b>©2025 <u>Berdia Bekauri</u></b></p>
             </footer>
         </div>
     )
