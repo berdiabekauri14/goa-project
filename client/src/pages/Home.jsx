@@ -17,12 +17,12 @@ export default function Home() {
                 <br />
                 <Nav />
                 <br />
-                <img src={img} alt="img" width="100" className=" translate-x-12" />
+                <img src={img} alt="img" width="100" className=" translate-x-8 m-2" />
             </header>
             <br />
             <main>
                 <div className=" m-10">
-                    <h1 className=" text-3xl"><b>Welcome to GOA!</b></h1>
+                    <h1 className=" text-5xl"><b>Welcome to GOA!</b></h1>
                     <br />
                     <h2 className=" text-7xl translate-y-20">
                         <i>Site made by 
