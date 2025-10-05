@@ -1,71 +1,59 @@
 const AppError = require("../utils/appError")
+const Comment = require("../models/comments.model")
+const catchAsync = require("../utils/catchAsync")
 
-const comments = [
-    { id: 1, comment: "This acadamy is very good! great job!"},
-    { id: 2, comment: "I want to learn too!" },
-    { id: 3, comment: "The best academy in georgia!" }
-]
+const getComments = catchAsync(async (req, res, next) => {
+    const comments = await Comment.find()
 
-const getComments = (req, res) => {
     res.json(comments)
-}
+})
 
-const getComment = (req, res) => {
-    const commentId = parseInt(req.params.id)
-    const Comment = comments.find(el => el === commentId * 1)
+const getComment = catchAsync(async (req, res, next) => {
+    const comment = await Comment.findById(req.params.id)
 
-    if (Comment) {
-        res.json(Comment)
+    if (comment) {
+        res.json(comment)
     } else {
-        return new AppError("Comment wasn't found", 404)
+        return next(new AppError("Comment not found", 404))
     }
-}
+})
 
-const createComment = (req, res) => {
-    const { comment } = req.body;
+const createComment = catchAsync(async (req, res, next) => {
+    const { content } = req.body;
+
+    if (!content) {
+        return next(new AppError("Comment is required to be filled", 403))
+    }
+
+    const newComment = await Comment.create({
+        content
+    })
+
+    res.status(201).json(newComment)
+})
+
+const deleteComment = catchAsync(async (req, res, next) => {
+    const comment = Comment.findbyIdAndDelete(req.params.id)
 
     if (!comment) {
-        return new AppError("Comment is required to be filled", 403);
+        return next(new AppError("Comment not found", 404))
     }
 
-    const newComment = {
-        id: comments[comments.length + 1],
-        comment
-    }
+    res.send(`Comment ${comment} is deleted!`)
+})
 
-    comments.push(newComment)
-
-    res.status(201).json(comments)
-}
-
-const deleteComment = (req, res) => {
-    const { id } = req.params
-    const Comment = comments.findIndex(el => el === id * 1)
-
-    if (id === -1) {
-        return new AppError("Comment wasn't found", 404)
-    }
-
-    comments.splice(Comment, 1)
-
-    res.status(204).json(comments)
-}
-
-const updateComment = (req, res) => {
-    const { id } = req.params
-
-    const { comment } = req.params
-
-    const Comment = comments.find(el => el === id * 1)
-
-    if (!Comment) {
-        return new AppError("Comment wasn't found", 404)
-    }
-
-    if (comment) Comment.comment = comment
+const updateComment = catchAsync(async (req, res, next) => {
+    const comment = Comment.findById(req.params.id)
     
-    res.json(comments)
+    const { content } = req.body
 
-}
+    if (!content) {
+        return next(new AppError("Comment not found", 404))
+    }
+
+    if(content) cOmment.content = content
+
+    res.json(comment)
+})
 
 module.exports = { getComments, getComment, createComment, deleteComment, updateComment }
