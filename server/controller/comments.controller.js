@@ -3,57 +3,60 @@ const Comment = require("../models/comments.model")
 const catchAsync = require("../utils/catchAsync")
 
 const getComments = catchAsync(async (req, res, next) => {
-    const comments = await Comment.find()
+    const comments = await Comment.find();
 
-    res.json(comments)
-})
+    res.status(200).json(comments);
+});
 
 const getComment = catchAsync(async (req, res, next) => {
-    const comment = await Comment.findById(req.params.id)
+    const { id } = req.params;
 
-    if (comment) {
-        res.json(comment)
-    } else {
-        return next(new AppError("Comment not found", 404))
+    const comment = await Comment.findById(id)
+
+    if(!comment){
+        return next(new AppError('Comment not found', 404));
     }
-})
+
+    res.status(200).json(comment);
+});
 
 const createComment = catchAsync(async (req, res, next) => {
     const { content } = req.body;
 
-    if (!content) {
-        return next(new AppError("Comment is required to be filled", 403))
-    }
-
     const newComment = await Comment.create({
         content
-    })
+    });
 
     res.status(201).json(newComment)
-})
+});
 
 const deleteComment = catchAsync(async (req, res, next) => {
-    const comment = Comment.findbyIdAndDelete(req.params.id)
+    const { id } = req.params;
+
+    const comment = await Comment.findById(id)
 
     if (!comment) {
         return next(new AppError("Comment not found", 404))
     }
 
+    await Comment.findByIdAndDelete(id);
+
     res.send(`Comment ${comment} is deleted!`)
-})
+});
 
 const updateComment = catchAsync(async (req, res, next) => {
-    const comment = Comment.findById(req.params.id)
-    
-    const { content } = req.body
+    const { id } = req.params;
+    const { content } = req.body;
 
-    if (!content) {
+    const comment = await Comment.findById(id)
+
+    if (!comment) {
         return next(new AppError("Comment not found", 404))
     }
 
-    if(content) cOmment.content = content
+    if(content) comment.content = content;
 
-    res.json(comment)
-})
+    res.status(200).json(comment)
+});
 
-module.exports = { getComments, getComment, createComment, deleteComment, updateComment }
+module.exports = { getComments, getComment, createComment, deleteComment, updateComment };
