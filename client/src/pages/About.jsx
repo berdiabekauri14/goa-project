@@ -1,15 +1,13 @@
 import Comments from "../components/Comments";
 import img from "../assets/imgs/img.png";
-import shadow from "../assets/imgs/black.jpg"
 
 export default function About() {
     return (
         <div>
-            <h1 className=" text-8xl translate-y-23/12"><b>About us</b></h1>
-            <div className=" m-3">
-                <img src={shadow} alt="shadow" className=" translate-x-23/13 translate-y-38/35 opacity-75" width="425" />
-                <img src={img} alt="img" className=" translate-x-190 m-4 rounded" width="500" />
-            </div>
+            <h1 className=" text-6xl"><b>About us</b></h1>
+            <center>
+                <img src={img} alt="img" className=" rounded m-5" width="500" />
+            </center>
             <br />
             <p className=" m-2">Facebook to our page: <a href="https://www.facebook.com/nika11keshelava?locale=ka_GE" className=" underline text-blue-400">https://www.facebook.com/nika11keshelava?locale=ka_GE</a></p>
             <br />

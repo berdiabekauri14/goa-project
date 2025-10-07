@@ -5,13 +5,12 @@ import Contact from "../pages/Contact"
 import Signup from "../pages/Signup"
 
 import video from "../assets/videos/video.mp4"
-import shadow from "../assets/imgs/black.jpg"
 import img from "../assets/imgs/goa logo.png"
 import Courses from "./Courses";
 
 export default function Home() {
     return (
-        <div className=" text-center">
+        <div className=" text-center center">
             <header className=" p-15 bg-green-900 text-white flex justify-center items-center">
                 <h1 className=" text-4xl m-5"><b><u>GOA ● Goal oriented academy</u></b></h1>
                 <br />
@@ -28,8 +27,10 @@ export default function Home() {
                         <i>Site made by 
                         Berdia Bekauri</i>
                     </h2>
-                    <img src={shadow} alt="shadow" className=" translate-x-23/12 translate-y-44/35 opacity-75" width="400" />
-                    <video src={video} className=" translate-x-201 rounded"></video>
+                    <br />
+                    <center>
+                        <video src={video} className=" m-25 rounded"></video>
+                    </center>
                 </div>
                 <br />
                 <Routes>
