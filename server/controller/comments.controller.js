@@ -56,6 +56,8 @@ const updateComment = catchAsync(async (req, res, next) => {
 
     if(content) comment.content = content;
 
+    await comment.save();
+
     res.status(200).json(comment)
 });
 
