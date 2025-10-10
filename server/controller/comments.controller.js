@@ -23,6 +23,10 @@ const getComment = catchAsync(async (req, res, next) => {
 const createComment = catchAsync(async (req, res, next) => {
     const { content } = req.body;
 
+    if (!content || content.trim() === "") {
+        return next(new AppError("Content required!", 403))
+    }
+
     const newComment = await Comment.create({
         content
     });
