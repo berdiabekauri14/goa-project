@@ -21,11 +21,10 @@ export default function Home() {
             <br />
             <main>
                 <div className=" m-10">
-                    <h1 className=" text-5xl"><b>Welcome to GOA!</b></h1>
+                    <h1 className=" text-7xl"><b>Welcome to the world of GOA!</b></h1>
                     <br />
-                    <h2 className=" text-7xl translate-y-20">
-                        <i>Site made by 
-                        Berdia Bekauri</i>
+                    <h2 className=" text-5xl translate-y-20">
+                        <i>Site made by Berdia Bekauri</i>
                     </h2>
                     <br />
                     <center>

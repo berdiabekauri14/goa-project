@@ -7,7 +7,7 @@ import maths from "../assets/imgs/download (4).jpeg"
 export default function Courses() {
     return (
         <div>
-            <h1 className=" text-8xl m-2"><b>Our Courses</b></h1>
+            <h1 className=" text-6xl m-2"><b>Our Courses</b></h1>
             <br />
             <div className=" flex justify-center m-2">
                 <p className=" translate-x-40"><b>Programming: </b></p>

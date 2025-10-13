@@ -21,7 +21,7 @@ export default function Contact() {
 
     return (
         <div>
-            <h1 className=" text-3xl"><b>Contact us</b></h1>
+            <h1 className=" text-6xl"><b>Contact us</b></h1>
             <br />
             <form name="form">
                 <input type="email" name="email" className=" border-2 outline-0 p-2 m-2 rounded" placeholder="Enter your email" />
