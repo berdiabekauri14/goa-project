@@ -23,6 +23,8 @@ export default function Contact() {
         <div>
             <h1 className=" text-6xl"><b>Contact us</b></h1>
             <br />
+            <p className=" text-3xl"><i>Send us a message if you want to!</i></p>
+            <br />
             <form name="form">
                 <input type="email" name="email" className=" border-2 outline-0 p-2 m-2 rounded" placeholder="Enter your email" />
                 <br />

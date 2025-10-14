@@ -7,6 +7,7 @@ import Signup from "../pages/Signup"
 import video from "../assets/videos/video.mp4"
 import img from "../assets/imgs/goa logo.png"
 import Courses from "./Courses";
+import Profile from "./Profile";
 
 export default function Home() {
     return (
@@ -16,7 +17,8 @@ export default function Home() {
                 <br />
                 <Nav />
                 <br />
-                <img src={img} alt="img" width="100" className=" translate-x-8 m-2" />
+                <img src={img} alt="img" width="100" className=" translate-x-8 m-2 rounded" />
+                <br />
             </header>
             <br />
             <main>
@@ -37,6 +39,7 @@ export default function Home() {
                     <Route path="/client/src/pages/Courses.jsx" element={<Courses />} />
                     <Route path="/client/src/pages/Contact.jsx" element={<Contact />} />
                     <Route path="/client/src/pages/Signup.jsx" element={<Signup />} />
+                    <Route path="/client/src/pages/Profile.jsx" element={<Profile />} />
                 </Routes>
             </main>
             <br />

@@ -33,6 +33,8 @@ export default function Signup() {
             <div>
                 <h1 className=" text-6xl"><b>Signup</b></h1>
                 <br />
+                <p className=" text-3xl"><i>Welcome Back!</i></p>
+                <br />
                 <form action="./Home.jsx" name="form">
                     <input type="text" name="name" className=" border-2 outline-0 p-2 m-2 rounded" placeholder="Enter your name" />
                     <br />
