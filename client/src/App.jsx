@@ -5,18 +5,25 @@ import Courses from "./pages/Courses"
 import Contact from "./pages/Contact"
 import Signup from "./pages/Signup"
 import Profile from "./pages/Profile"
+import Nav from "./components/Nav"
 
 export default function App() {
   return (
     <>
-      <Routes>
-        <Route path="*" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/courses" element={<Courses />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/signUp" element={<Signup />} />
-        <Route path="/profile" element={<Profile />} />
-      </Routes>
+      <Nav />
+      <center>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/courses" element={<Courses />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/signUp" element={<Signup />} />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
+      </center>
+      <footer className=" p-80 bg-green-900 text-white">
+        <p className=" -translate-y-50 text-9xl"><b>©2025 <u>Berdia Bekauri</u></b></p>
+      </footer>
     </>
   )
 }

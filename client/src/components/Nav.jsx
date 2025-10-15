@@ -13,7 +13,7 @@ export default function Nav() {
     )
 
     return (
-        <div className=" bg-green-900 text-white">
+        <div className=" bg-green-900 text-white flex justify-center items-center p-15">
             <nav>
                 <Link to="/" className=" m-3 text-3xl">Home</Link>
                 <Link to="/about" className=" m-3 text-3xl">About</Link>
