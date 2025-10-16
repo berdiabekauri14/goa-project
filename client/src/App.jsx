@@ -22,7 +22,7 @@ export default function App() {
         </Routes>
       </center>
       <footer className=" p-80 bg-green-900 text-white">
-        <p className=" -translate-y-50 text-9xl"><b>©2025 <u>Berdia Bekauri</u></b></p>
+        <center><p className=" -translate-y-50 text-8xl"><b>©2025 <u>Berdia Bekauri</u></b></p></center>
       </footer>
     </>
   )

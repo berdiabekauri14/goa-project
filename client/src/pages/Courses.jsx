@@ -9,7 +9,7 @@ export default function Courses() {
         <div>
             <h1 className=" text-6xl m-2"><b>Our Courses</b></h1>
             <br />
-            <div className=" flex justify-center m-2">
+            <div className=" flex justify-center m-15">
                 <p className=" translate-x-40"><b>Programming: </b></p>
                 <br />
                 <img src={programming} className=" m-4 translate-y-10 rounded" alt="programming" />
