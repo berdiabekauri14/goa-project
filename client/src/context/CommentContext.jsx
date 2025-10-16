@@ -1,36 +1,32 @@
 /* eslint-disable react-refresh/only-export-components */
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect, useCallback } from "react";
 
-export const CommentContext = createContext()
+export const CommentContext = createContext();
 
-const API_URL = "http://localhost:8008"
+const API_URL = "http://localhost:8008";
 
 export function CommentProvider({ children }) {
-    const [comments, setComments] = useState([])
+    const [comments, setComments] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
 
-    const returnComments = async () => {
+    const fetchComments = useCallback(async () => {
+        setLoading(true);
+        setError(null);
         try {
-            const res = await fetch(`${API_URL}/comments`, {
-                method: "GET",
-                headers: {
-                    "Content-type": "application/json",
-                }
-            })
-
-            if(!res.ok) {
-                console.log("Response is not ok");
-                return;
-            }
-
-            const data = await res.json()
-
-            setComments(data)
-        } catch(err) {
-            console.log(`Error: ${err}`)
+            const res = await fetch(`${API_URL}/comments`);
+            if (!res.ok) throw new Error("Failed to fetch comments");
+            const data = await res.json();
+            setComments(data);
+        } catch (err) {
+            setError(err.message);
+        } finally {
+            setLoading(false);
         }
-    }
+    }, []);
 
-    const createComments = async (commentData) => {
+    const addComment = async (commentData) => {
+        setError(null);
         try {
             const res = await fetch(`${API_URL}/comments`, {
                 method: "POST",
@@ -38,24 +34,26 @@ export function CommentProvider({ children }) {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(commentData)
-            })
+            });
 
             if (!res.ok) {
-                console.log("Failed to create comment");
-                return;
+                throw new Error("Failed to create comment")
             }
 
-            const data = await res.json()
-
-            setComments(prevComments => [...prevComments, data])
-        } catch(err) {
-            console.log(`Error: ${err}`)
+            const newComment = await res.json();
+            setComments(prev => [...prev, newComment]);
+        } catch (err) {
+            setError(err.message);
         }
-    }
+    };
+
+    useEffect(() => {
+        fetchComments();
+    }, [fetchComments]);
 
     return (
-        <CommentContext.Provider value={{ returnComments, createComments, comments }}>
-            { children }
+        <CommentContext.Provider value={{ comments, loading, error, fetchComments, addComment }}>
+            {children}
         </CommentContext.Provider>
-    )
+    );
 }
