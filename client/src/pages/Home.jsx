@@ -1,15 +1,8 @@
 import video from "../assets/videos/video.mp4"
-import img from "../assets/imgs/goa logo.png"
 
 export default function Home() {
     return (
         <div className=" text-center center">
-            <header className=" p-15 bg-green-900 text-white flex justify-center items-center">
-                <h1 className=" text-4xl m-5"><b><u>GOA ● Goal oriented academy</u></b></h1>
-                <br />
-                <img src={img} alt="img" width="100" className=" translate-x-8 m-2 rounded" />
-                <br />
-            </header>
             <br />
             <main>
                 <div className=" m-10">
@@ -24,10 +17,6 @@ export default function Home() {
                     </center>
                 </div>
             </main>
-            <br />
-            <footer className=" p-80 bg-green-900 text-white">
-                <center><p className=" -translate-y-50 text-9xl"><b>©2025 <u>Berdia Bekauri</u></b></p></center>
-            </footer>
         </div>
     )
 }

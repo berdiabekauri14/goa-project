@@ -7,10 +7,18 @@ import Signup from "./pages/Signup"
 import Profile from "./pages/Profile"
 import Nav from "./components/Nav"
 
+import img from "./assets/imgs/goa logo.png"
+
 export default function App() {
   return (
     <>
-      <Nav />
+      <header className=" p-15 bg-green-900 text-white flex justify-center items-center">
+        <h1 className=" text-4xl m-5"><b><u>GOA ● Goal oriented academy</u></b></h1>
+        <br />
+        <img src={img} alt="img" width="100" className=" translate-x-8 m-2 rounded" />
+        <br />
+        <Nav />
+      </header>
       <center>
         <Routes>
           <Route path="/" element={<Home />} />
