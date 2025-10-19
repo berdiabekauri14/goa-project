@@ -1,14 +1,14 @@
 import { Link } from "react-router"
+import { AuthContext } from "../context/AuthContext"
+import { useContext } from "react"
 
 export default function Nav() {
-    
+    const { user, logout } = useContext(AuthContext)
+
     const html = (
         <>
-            <Link className=" m-3 text-3xl" to="/profile">Profile</Link>
-            <Link className=" m-4 text-3xl"><button className=" bg-white text-green-900 cursor-pointer rounded-4xl w-90 h-13" onClick={() => {
-                localStorage.removeItem("Users")
-                alert("You have succesfully logged out!")
-            }}>Logout</button></Link>
+            <Link to="/signUp" className=" m-4 text-3xl"><button className=" bg-white text-green-900 cursor-pointer rounded-4xl w-90 h-13">Sign Up</button></Link>
+            <Link to="/logIn" className=" m-4 text-3xl">Log In</Link>
         </>
     )
 
@@ -20,7 +20,7 @@ export default function Nav() {
                 <Link to="/courses" className=" m-3 text-3xl">Courses</Link>
                 <Link to="/contact" className=" m-3 text-3xl">Contact</Link>
                 {
-                    !localStorage.getItem("Users") ? <Link to="/signUp" className=" m-4 text-3xl"><button className=" bg-white text-green-900 cursor-pointer rounded-4xl w-90 h-13">Sign Up</button></Link> : html
+                    !user ? html : <Link className=" m-4 text-3xl"><button className=" bg-white text-green-900 cursor-pointer rounded-4xl w-90 h-13" onClick={logout}>Logout</button></Link>
                 }
             </nav>
         </div>

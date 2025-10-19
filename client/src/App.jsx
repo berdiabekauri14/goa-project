@@ -4,10 +4,10 @@ import About from "./pages/About"
 import Courses from "./pages/Courses"
 import Contact from "./pages/Contact"
 import Signup from "./pages/Signup"
-import Profile from "./pages/Profile"
 import Nav from "./components/Nav"
 
 import img from "./assets/imgs/goa logo.png"
+import Login from "./pages/Login"
 
 export default function App() {
   return (
@@ -26,7 +26,7 @@ export default function App() {
           <Route path="/courses" element={<Courses />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/signUp" element={<Signup />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/logIn" element={<Login />} />
         </Routes>
       </center>
       <footer className=" p-80 bg-green-900 text-white">

@@ -3,6 +3,9 @@ const dotenv = require("dotenv")
 const morgan = require("morgan")
 const mongoose = require("mongoose");
 const commentsRouter = require("./routers/comments.router");
+const userRouter = require("./routers/users.router");
+const authRouter = require("./routers/auth.router");
+const globalErrorHandler = require("./controller/error.controller");
 
 const app = express();
 
@@ -15,6 +18,12 @@ if (process.env.NODE_ENV === "development") {
 app.use(express.json());
 
 app.use('/comments', commentsRouter);
+
+app.use("/users", userRouter)
+
+app.use("/auth", authRouter)
+
+app.use(globalErrorHandler)
 
 mongoose.connect(process.env.DATABASE)
     .then(() => {
