@@ -1,8 +1,7 @@
 const express = require("express")
+const { getUsers, createUser, getUser, deleteUser, updateUser } = require("../controller/users.controller")
 
 const userRouter = express.Router()
-
-const { getUsers, getUser, createUser, deleteUser, updateUser } = require("../controllers/users.controller.js")
 
 userRouter
     .route("/")
