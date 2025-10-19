@@ -2,7 +2,7 @@ const express = require("express")
 
 const userRouter = express.Router()
 
-const { getUsers, getUser, createUser, deleteUser, updateUser } = require("../controllers/user.controller.js")
+const { getUsers, getUser, createUser, deleteUser, updateUser } = require("../controllers/users.controller.js")
 
 userRouter
     .route("/")
