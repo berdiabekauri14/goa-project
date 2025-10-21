@@ -20,7 +20,7 @@ export default function Signup() {
                     <br />
                     <input type="password" name="comfPass" className=" border-2 outline-0 p-2 m-2 rounded" placeholder="Confirm your password" required />
                     <br />
-                    <button onClick={signup} className=" border-2 rounded cursor-pointer">Submit</button>
+                    <button onClick={signup} className=" border-2 rounded cursor-pointer p-2 m-3">Submit</button>
                 </form>
             </div>
         </div>

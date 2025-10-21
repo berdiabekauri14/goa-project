@@ -16,7 +16,7 @@ export default function Login() {
                     <br />
                     <input type="password" name="password" className=" border-2 outline-0 p-2 m-2 rounded" placeholder="Create a password" required />
                     <br />
-                    <button onClick={login} className=" border-2 rounded cursor-pointer">Submit</button>
+                    <button onClick={login} className=" border-2 rounded cursor-pointer p-2 m-3">Submit</button>
                 </form>
             </div>
         </div>
