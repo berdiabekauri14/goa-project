@@ -1,12 +1,12 @@
 /* eslint-disable react-refresh/only-export-components */
 import { createContext, useState } from "react";
 
-export const AuthContext = createContext()
+export const AuthContext = createContext();
 
-const API_URL = "https://localhost:8008"
+const API_URL = "https://localhost:8008";
 
 export function AuthProvider({ children }) {
-    const [user, setUser] = useState([])
+    const [user, setUser] = useState([]);
 
     const signup = async (formObj) => {
         try {
@@ -18,21 +18,20 @@ export function AuthProvider({ children }) {
                 body: JSON.stringify(formObj)
             });
 
-            console.log(res)
-
             const data = await res.json();
 
-            if (!res.ok){
-                throw new Error(data.message)
+            if (!res.ok) {
+                throw new Error(data.message);
             }
 
-            setUser(data)
+            setUser(data.data?.user || data.user || data);
 
-            alert(data.message);
-        } catch(err) {
-            console.log(err);
+            alert("You have succesfully signed up!");
+        } catch (err) {
+            console.error(err);
+            alert(err.message || "Signup failed");
         }
-    }
+    };
 
     const login = async (formObj) => {
         try {
@@ -47,26 +46,29 @@ export function AuthProvider({ children }) {
 
             const result = await res.json();
 
-            if(!res.ok) {
+            if (!res.ok) {
                 throw new Error(result.message);
-            };
+            }
 
-            setUser(result)
+            const loggedInUser = result?.data?.user || result?.user || result;
 
-            setUser(result.data.user);
-        } catch(err) {
-            alert(err.message)
+            setUser(loggedInUser);
+
+            alert("You have succesfully logged in!")
+        } catch (err) {
+            alert(err.message || "Login failed");
         }
-    }
+    };
+
 
     const logout = async () => {
-        setUser(null)
-        alert("You have succesfully logged out")
-    }
-    
+        setUser(null);
+        alert("You have successfully logged out");
+    };
+
     return (
         <AuthContext.Provider value={{ signup, login, logout, user }}>
-            { children }
+            {children}
         </AuthContext.Provider>
-    )
+    );
 }

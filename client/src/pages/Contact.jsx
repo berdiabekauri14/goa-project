@@ -36,7 +36,7 @@ export default function Contact() {
                     <button onClick={handleFormSubmit} className=" border-2 rounded cursor-pointer p-2 m-3">Submit</button>
                 </form>
             </div>
-            <img src={img} alt="img" width="500" />
+            <img src={img} alt="img" width="500" className=" translate-x-15" />
         </div>
     )
 }
