@@ -5,27 +5,30 @@ import robotics from "../assets/imgs/download (3).jpeg"
 import maths from "../assets/imgs/download (4).jpeg"
 
 export default function Courses() {
+    const courses = [
+        { title: "Programming", img: programming },
+        { title: "MMA (Martial Arts)", img: mma },
+        { title: "Game Development", img: gameDev },
+        { title: "Robotics", img: robotics },
+        { title: "Maths", img: maths },
+    ];
+
     return (
-        <div>
-            <h1 className=" text-6xl m-2"><b>Our Courses</b></h1>
-            <br />
-            <div className=" flex justify-center m-15">
-                <p className=" translate-x-40"><b>Programming: </b></p>
-                <br />
-                <img src={programming} className=" m-4 translate-y-10 rounded" alt="programming" />
-                <br />
-                <p className=" translate-x-55"><b>MMA(Martial arts): </b></p>
-                <img src={mma} className=" m-4 translate-y-10 rounded" alt="mma" />
-                <br />
-                <p className=" translate-x-55"><b>Game development: </b></p>
-                <img src={gameDev} className=" m-4 translate-y-10 rounded" alt="gameDev" />
-                <br />
-                <p className=" translate-x-40"><b>Robotics: </b></p>
-                <img src={robotics} className=" m-4 translate-y-10 rounded" alt="robotics" />
-                <br />
-                <p className=" translate-x-40"><b>Maths: </b></p>
-                <img src={maths} className=" m-4 translate-y-10 rounded" alt="maths" />
+        <div className="px-4 py-10 max-w-7xl mx-auto text-center">
+            <h1 className="text-3xl sm:text-5xl font-bold mb-10">Our Courses</h1>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                {courses.map((course, index) => (
+                    <div key={index} className="bg-white shadow-lg rounded-xl p-4">
+                        <img 
+                            src={course.img} 
+                            alt={course.title} 
+                            className="w-full h-64 object-cover rounded-md mb-4"
+                        />
+                        <h2 className="text-xl font-semibold">{course.title}</h2>
+                    </div>
+                ))}
             </div>
         </div>
-    )
+    );
 }

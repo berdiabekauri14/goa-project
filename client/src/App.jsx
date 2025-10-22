@@ -15,7 +15,7 @@ export default function App() {
       <header className=" p-15 bg-green-900 text-white flex justify-center items-center">
         <h1 className=" text-4xl m-5"><b><u>GOA ● Goal oriented academy</u></b></h1>
         <br />
-        <img src={img} alt="img" width="100" className=" translate-x-8 m-2 rounded-full" />
+        <img src={img} alt="img" width="100" className=" m-2 rounded-full" />
         <br />
         <Nav />
       </header>

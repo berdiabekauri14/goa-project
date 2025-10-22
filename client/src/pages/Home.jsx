@@ -3,24 +3,22 @@ import img from "../assets/imgs/IMG_0671.PNG"
 
 export default function Home() {
     return (
-        <div className=" text-center center">
-            <br />
-            <main>
-                <div className=" m-10 flex justify-center items-center">
-                    <div>
-                        <h1 className=" text-7xl text-left"><b>Welcome to the world of GOA!</b></h1>
-                        <br />
-                        <h2 className=" text-5xl translate-y-20 text-gray-500 text-left">
-                            <i>Site made by Berdia Bekauri</i>
+        <div className="text-center px-4">
+            <main className="max-w-7xl mx-auto">
+                <div className="my-10 flex flex-col md:flex-row items-center justify-center gap-8">
+                    <div className="md:text-left text-center">
+                        <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold">
+                            Welcome to the world of GOA!
+                        </h1>
+                        <h2 className="mt-6 text-2xl sm:text-3xl text-gray-500 italic">
+                            Site made by Berdia Bekauri
                         </h2>
                     </div>
-                    <br />
-                    <img src={img} alt="img" width="500" className=" m-4 translate-y-12 translate-x-8" />
+                    <img src={img} alt="img" className="w-full max-w-sm md:max-w-md lg:max-w-lg mt-6 md:mt-0" />
                 </div>
-                <br />
-                    <center>
-                        <video src={video} className=" m-25 rounded"></video>
-                    </center>
+                <div className="my-10 flex justify-center">
+                    <video src={video} controls className="w-full max-w-3xl rounded shadow-lg" />
+                </div>
             </main>
         </div>
     )

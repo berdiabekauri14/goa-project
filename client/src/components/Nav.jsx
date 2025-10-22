@@ -7,25 +7,35 @@ export default function Nav() {
 
     const authLinks = (
         <>
-            <Link to="/signUp" className="m-4 text-3xl">
-                <button className="bg-white text-green-900 cursor-pointer rounded-4xl w-90 h-13">
+            <Link to="/signUp" className="text-lg sm:text-xl lg:text-2xl">
+                <button className="bg-white text-green-900 px-4 py-2 rounded-2xl hover:bg-gray-100 transition cursor-pointer">
                     Sign Up
                 </button>
             </Link>
-            <Link to="/logIn" className="m-4 text-3xl underline">Log In</Link>
+            <Link to="/logIn" className="text-lg sm:text-xl lg:text-2xl underline hover:text-gray-300 transition">
+                Log In
+            </Link>
         </>
     );
 
     return (
-        <div className="bg-green-900 text-white flex justify-center items-center p-15">
-            <nav>
-                <Link to="/" className="m-3 text-3xl underline">Home</Link>
-                <Link to="/about" className="m-3 text-3xl">About</Link>
-                <Link to="/courses" className="m-3 text-3xl">Courses</Link>
-                <Link to="/contact" className="m-3 text-3xl">Contact</Link>
+        <div className="bg-green-900 text-white px-4 py-6">
+            <nav className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 sm:gap-6">
+                <Link to="/" className="text-lg sm:text-xl lg:text-2xl underline hover:text-gray-300 transition">
+                    Home
+                </Link>
+                <Link to="/about" className="text-lg sm:text-xl lg:text-2xl hover:text-gray-300 transition">
+                    About
+                </Link>
+                <Link to="/courses" className="text-lg sm:text-xl lg:text-2xl hover:text-gray-300 transition">
+                    Courses
+                </Link>
+                <Link to="/contact" className="text-lg sm:text-xl lg:text-2xl hover:text-gray-300 transition">
+                    Contact
+                </Link>
                 {
                     !user ? authLinks : (
-                        <button onClick={logout} className="m-4 text-3xl bg-white text-green-900 cursor-pointer rounded-4xl w-90 h-13">
+                        <button onClick={logout} className="bg-white text-green-900 px-4 py-2 rounded-2xl text-lg sm:text-xl lg:text-2xl hover:bg-gray-100 transition cursor-pointer">
                             Logout
                         </button>
                     )
