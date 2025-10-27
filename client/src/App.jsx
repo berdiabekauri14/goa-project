@@ -30,7 +30,11 @@ export default function App() {
         </Routes>
       </center>
       <footer className=" p-80 bg-green-900 text-white">
-        <center><p className=" -translate-y-50 text-8xl"><b>©2025 <u>Berdia Bekauri</u></b></p></center>
+        <center>
+          <p className=" -translate-y-50 text-4xl"><b>©2025 <u>Berdia Bekauri</u></b></p>
+          <br />
+          <p className=" text-5xl text-white">Facebook: <a href="https://www.facebook.com/nika11keshelava" className=" underline">https://www.facebook.com/nika11keshelava</a></p>
+        </center>
       </footer>
     </>
   )

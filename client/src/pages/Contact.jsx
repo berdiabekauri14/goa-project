@@ -36,39 +36,14 @@ export default function Contact() {
                 <div className="w-full max-w-xl">
                     <h1 className="text-3xl sm:text-5xl font-bold mb-4">Contact Us</h1>
                     <p className="text-lg sm:text-2xl italic mb-8">Send us a message!</p>
-
                     <form onSubmit={handleFormSubmit} className="flex flex-col gap-4">
-                        <input
-                            type="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            className="border-2 p-3 rounded outline-none"
-                            placeholder="Enter your email"
-                            required
-                        />
-                        <textarea
-                            name="message"
-                            value={formData.message}
-                            onChange={handleChange}
-                            className="border-2 p-3 rounded outline-none resize-none h-32"
-                            placeholder="Enter your message"
-                            required
-                        ></textarea>
-                        <button
-                            type="submit"
-                            className="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition"
-                        >
-                            Submit
-                        </button>
+                        <input type="email" name="email" value={formData.email} onChange={handleChange} className="border-2 p-3 rounded outline-none" placeholder="Enter your email" required />
+                        <textarea name="message" value={formData.message} onChange={handleChange} className="border-2 p-3 rounded outline-none resize-none h-32" placeholder="Enter your message" required></textarea>
+                        <button type="submit" className="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition cursor-pointer">Submit</button>
                     </form>
                 </div>
                 <div className="w-full max-w-md">
-                    <img
-                        src={img}
-                        alt="Contact Illustration"
-                        className="w-full h-auto rounded"
-                    />
+                    <img src={img} alt="Contact Illustration" className="w-full h-auto rounded" />
                 </div>
             </div>
         </div>
