@@ -7,7 +7,7 @@ export default function About() {
         <div>
             <div>
                 <video className=" absolute bottom-15 h-332 -z-1" src={video} autoPlay loop muted></video>
-                <div className=" bg-white border-2 translate-y-62 -translate-x-105 w-300">
+                <div className=" bg-blue-300 text-white border-2 translate-y-62 -translate-x-105 w-300">
                     <h1 className=" text-6xl"><b>About us</b></h1>
                     <center>
                         <img src={img} alt="img" className=" rounded-full m-5" width="500" />
