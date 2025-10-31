@@ -31,7 +31,9 @@ export default function App() {
       </center>
       <footer className=" p-80 bg-green-900 text-white">
         <center>
-          <p className=" -translate-y-50 text-4xl"><b>©2025 <u>Berdia Bekauri</u></b></p>
+          <h1 className=" text-7xl m-5"><b><div className=" bg-black w-99 m-2 rotate-2 hover:-rotate-2 transition rounded-3xl"><span className=" m-2">JOIN GOA</span></div> BECOME A CHAD</b></h1>
+          <br />
+          <p className=" m-5 text-4xl"><b>©2025 <u>Berdia Bekauri</u></b></p>
           <br />
           <p className=" text-5xl text-white">Facebook: <a href="https://www.facebook.com/nika11keshelava" className=" underline">https://www.facebook.com/nika11keshelava</a></p>
         </center>
